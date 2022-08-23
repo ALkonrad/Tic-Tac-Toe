@@ -12,8 +12,12 @@ def draw_board():
 
 def add_symbol(symbol):
     symbol_location = int(input('>>> ')) - 1
-    game_board[symbol_location] = symbol
-    draw_board()
+    if game_board[symbol_location] == 'x' or game_board[symbol_location] == 'o':
+        print('no')
+        add_symbol(symbol)
+    else:
+        game_board[symbol_location] = symbol
+        draw_board()
 
 
 current_symbol = 'x'
