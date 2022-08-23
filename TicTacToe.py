@@ -12,10 +12,10 @@ def draw_board():
 
 def add_symbol(symbol):
     symbol_location = int(input('>>> ')) - 1
-    if symbol_location > 9:
+    if symbol_location > 8:
         print('The number you have entered is too large.')
         add_symbol(symbol)
-    elif game_board[symbol_location] == 'x' or game_board[symbol_location] == 'o':
+    elif game_board[symbol_location] != '-':
         print('This square is taken.')
         add_symbol(symbol)
     else:
